@@ -30,19 +30,19 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .bg-fravega { background-color: #b18af1; }
-        .text-fravega { color: #b18af1; }
-        .border-fravega { border-color: #b18af1; }
+        /* Ajuste a paleta de marca */
+        .bg-fravega { background-color: #4f3089; }
+        .text-fravega { color: #23a5ba; }
+        .border-fravega { border-color: #23a5ba; }
         
         /* Estilos para el Simulador */
         .scenario-card { transition: all 0.2s ease; cursor: pointer; }
-        .scenario-card:hover { transform: translateY(-2px); border-color: #b18af1; }
-        .scenario-card.selected { border-color: #b18af1; background-color: #f5f0ff; }
+        .scenario-card:hover { border-color: #23a5ba; }
+        .scenario-card.selected { border-color: #4f3089; background-color: #f5f3ff; }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Navegación -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
@@ -54,17 +54,15 @@
         </div>
     </nav>
 
-    <!-- Hero -->
     <header class="bg-fravega text-white py-24 px-4 text-center">
         <div class="max-w-4xl mx-auto">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6">Feedback entre generaciones</h1>
-            <p class="text-xl md:text-2xl font-light text-purple-100 italic">Una conversación que hace crecer a los equipos</p>
+            <p class="text-xl md:text-2xl font-light text-cyan-100 italic">Una conversación que hace crecer a los equipos</p>
         </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-4 py-16 space-y-24">
 
-        <!-- Introducción Narrativa -->
         <section class="max-w-4xl mx-auto bg-white p-10 md:p-16 rounded-[3rem] shadow-sm border border-slate-100">
             <div class="prose prose-slate max-w-none text-lg md:text-xl text-slate-600 leading-relaxed space-y-8">
                 <p>
@@ -77,7 +75,6 @@
             </div>
         </section>
 
-        <!-- Explorador Interactivo con Años -->
         <section id="explorador">
             <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-slate-800">Características y Postura ante el Feedback</h2>
@@ -92,43 +89,37 @@
                     <button class="tab-btn flex-1 py-6 px-4 text-xs font-black uppercase tracking-widest" data-target="boomers">Baby Boomers</button>
                 </div>
                 <div class="p-8 md:p-14" id="tab-content">
-                    <!-- Dinámico -->
-                </div>
+                    </div>
             </div>
         </section>
 
-        <!-- Texto sobre Adaptación y Empatía -->
         <section class="max-w-4xl mx-auto space-y-12">
             <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
-                    En los equipos compartimos el trabajo personas de distintas generaciones y cada uno tiene expectativas diferentes sobre cómo interactuar, comunicarse y recibir feedback. Algunos valoran más la formalidad, otros las conversaciones más frecuentes: todas las perspectivas son válidas y es en esta diversidad que aprendemos y crecemos como equipo.
-                </p>
-                <p>
-                    <strong>La clave está en cómo nos adaptamos para dar y recibir feedback:</strong> conocer que valora cada generación y cómo preparar estos intercambios nos acerca más a tener conversaciones de feedback más efectivas, donde el mensaje llegue y realmente genere aprendizaje.
+                    En los equipos compartimos el trabajo personas de distintas generaciones y cada uno tiene expectativas diferentes sobre cómo interactuar, comunicarse y recibir feedback. Algunos valoran más la formalidad, otros las conversaciones más frecuentes.
                 </p>
             </div>
 
-            <div class="bg-orange-50 p-10 rounded-[2.5rem] border-2 border-dashed border-orange-200 relative">
-                <div class="absolute -top-6 left-10 bg-orange-400 text-white px-6 py-2 rounded-full font-bold shadow-md">La clave es la Empatía</div>
-                <p class="text-xl text-orange-900 font-medium italic leading-relaxed">
-                    "Habilitar espacios de diálogo abierto que alienten la comprensión entre los miembros del equipo hace que nos sintamos más cómodos de compartir perspectivas y experiencias. Estos espacios enmarcados en nuestros objetivos y valores como compañía hace que trascendamos estas diferencias generacionales y nos enfoquemos en respetar en este dar y recibir contribuciones únicas para el crecimiento como equipo."
+            <div class="bg-cyan-50 p-10 rounded-[2.5rem] border-2 border-dashed border-cyan-200 relative">
+                <div class="absolute -top-6 left-10 bg-fravega text-white px-6 py-2 rounded-full font-bold shadow-md">La clave es la Empatía</div>
+                <p class="text-xl text-slate-800 font-medium italic leading-relaxed">
+                    "Habilitar espacios de diálogo abierto que alienten la comprensión entre los miembros del equipo hace que nos sintamos más cómodos de compartir perspectivas y experiencias."
                 </p>
             </div>
         </section>
 
-        <!-- Radar Comparativo de Todas las Generaciones -->
         <section class="bg-white rounded-[3rem] shadow-sm p-10 md:p-16 border border-slate-100">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-3xl font-bold text-slate-800 mb-6">Mapeo de Valores</h2>
                     <p class="text-slate-600 mb-8 leading-relaxed">
-                        Visualización de cómo priorizan distintos aspectos laborales las cuatro generaciones que conviven en Frávega. Entender estas curvas nos permite ajustar el tono de nuestra comunicación.
+                        Visualización de cómo priorizan distintos aspectos laborales las cuatro generaciones.
                     </p>
                     <div class="grid grid-cols-2 gap-4 text-xs font-bold uppercase tracking-widest">
-                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-purple-500"></span> Gen Z</div>
-                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-pink-500"></span> Millennials</div>
-                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-orange-500"></span> Gen X</div>
-                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-teal-500"></span> Boomers</div>
+                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background-color: #23a5ba;"></span> Gen Z</div>
+                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background-color: #4f3089;"></span> Millennials</div>
+                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background-color: #83348b;"></span> Gen X</div>
+                        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full" style="background-color: #da5d7c;"></span> Boomers</div>
                     </div>
                 </div>
                 <div class="chart-container">
@@ -137,58 +128,44 @@
             </div>
         </section>
 
-        <!-- Recorrido y Antigüedad -->
         <section id="recorrido" class="space-y-16">
-            <div class="text-center max-w-3xl mx-auto space-y-4">
-                <h2 class="text-3xl font-bold text-slate-800">El Impacto del Recorrido</h2>
-                <p class="text-slate-600 text-lg">Además de la generación, el tiempo en la organización influye en cómo damos y recibimos feedback.</p>
-            </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-blue-50 p-10 rounded-[2.5rem] border border-blue-100">
-                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Experiencia (Antigüedad)</h3>
-                    <p class="text-blue-800 leading-relaxed text-lg">
-                        Quienes tienen mayor antigüedad suelen valorar que se reconozca su conocimiento del negocio. La experiencia aporta <strong>contexto y perspectiva</strong> fundamental.
+                <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4" style="color: #4f3089;">Experiencia (Antigüedad)</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Quienes tienen mayor antigüedad suelen valorar que se reconozca su conocimiento del negocio.
                     </p>
                 </div>
-                <div class="bg-emerald-50 p-10 rounded-[2.5rem] border border-emerald-100">
-                    <h3 class="text-2xl font-bold text-emerald-900 mb-4">Nuevas Miradas (Ingreso)</h3>
-                    <p class="text-emerald-800 leading-relaxed text-lg">
-                        Quienes recién se incorporan necesitan mayor claridad sobre las expectativas y acompañamiento. Traen <strong>ideas, energía y formas distintas</strong> de hacer las cosas.
+                <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4" style="color: #23a5ba;">Nuevas Miradas (Ingreso)</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Quienes recién se incorporan necesitan mayor claridad sobre las expectativas y acompañamiento.
                     </p>
                 </div>
             </div>
 
-            <!-- Caso Ejemplo -->
             <div class="bg-slate-900 text-white p-12 rounded-[3rem] relative overflow-hidden">
                 <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
                     <div class="md:w-2/3 space-y-6">
-                        <h4 class="text-2xl font-bold text-fravega italic">Caso: Dos personas de 35 años</h4>
-                        <p class="text-slate-300 text-lg leading-relaxed">
-                            Una lleva diez años en la compañía y otra ingresó hace pocas semanas. A pesar de tener la misma edad, sus necesidades son distintas:
-                        </p>
+                        <h4 class="text-2xl font-bold italic" style="color: #da5d7c;">Caso: Dos personas de 35 años</h4>
+                        <p class="text-slate-300 text-lg leading-relaxed">Sus necesidades son distintas según su recorrido en la compañía.</p>
                         <ul class="space-y-4 text-slate-400">
-                            <li class="flex gap-3"><span class="text-fravega">✔</span> La primera valora un feedback directo que la invite a aportar su mirada experta.</li>
-                            <li class="flex gap-3"><span class="text-fravega">✔</span> La segunda necesita más contexto, orientación y espacios para preguntar.</li>
+                            <li class="flex gap-3"><span style="color: #23a5ba;">✔</span> La primera valora un feedback directo.</li>
+                            <li class="flex gap-3"><span style="color: #23a5ba;">✔</span> La segunda necesita más contexto y orientación.</li>
                         </ul>
                     </div>
-                    <div class="md:w-1/3 flex justify-center">
-                        <div class="text-8xl">💡</div>
-                    </div>
+                    <div class="md:w-1/3 flex justify-center text-8xl">💡</div>
                 </div>
             </div>
         </section>
 
-        <!-- NUEVO RECURSO: Simulador de Conversaciones -->
         <section id="simulador" class="bg-white rounded-[3rem] shadow-sm p-10 md:p-16 border border-slate-100 space-y-10">
             <div class="text-center max-w-2xl mx-auto space-y-4">
                 <span class="text-xs font-black text-fravega uppercase tracking-widest">Herramienta Práctica</span>
                 <h2 class="text-3xl font-bold text-slate-800">¿Cómo darías este mensaje?</h2>
-                <p class="text-slate-600">Selecciona una situación y una generación para ver cómo adaptar tu discurso.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Selector de Situación -->
                 <div class="space-y-6">
                     <h4 class="font-bold text-slate-700">1. Selecciona la Situación:</h4>
                     <div class="space-y-3">
@@ -196,14 +173,12 @@
                             <div class="text-2xl">📈</div>
                             <div>
                                 <p class="font-bold text-sm">Mejora en un proceso técnico</p>
-                                <p class="text-xs text-slate-500">Sugerir un cambio en la forma de ejecutar una tarea.</p>
                             </div>
                         </div>
                         <div onclick="selectScenario(1)" id="sc-1" class="scenario-card p-4 rounded-2xl border border-slate-200 flex items-center gap-4">
                             <div class="text-2xl">⏰</div>
                             <div>
                                 <p class="font-bold text-sm">Cumplimiento de plazos</p>
-                                <p class="text-xs text-slate-500">Conversar sobre la entrega fuera de término de un reporte.</p>
                             </div>
                         </div>
                     </div>
@@ -217,13 +192,12 @@
                     </div>
                 </div>
 
-                <!-- Resultado de la Adaptación -->
                 <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-200 flex flex-col justify-center">
                     <div id="sim-result" class="animate-fade-in text-center space-y-6">
                         <div class="text-5xl mb-4" id="res-icon">🎯</div>
                         <h4 class="text-xl font-bold text-slate-800" id="res-title">Selecciona un perfil</h4>
                         <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm italic text-slate-600" id="res-quote">
-                            "Aquí verás cómo adaptar el mensaje para que sea efectivo..."
+                            "Aquí verás cómo adaptar el mensaje..."
                         </div>
                         <div class="text-xs font-bold text-fravega uppercase tracking-widest mt-4" id="res-tip">CONSEJO CLAVE</div>
                     </div>
@@ -231,18 +205,11 @@
             </div>
         </section>
 
-        <!-- Conclusión -->
         <section class="text-center space-y-8 pb-20">
-            <div class="max-w-3xl mx-auto space-y-6">
-                <p class="text-lg text-slate-600">
-                    Poder conocer en mayor profundidad a cada generación, nos ayuda a ampliar las posibilidades para comunicarnos. Al desarrollar la capacidad de adaptarnos, nos preparamos para tener conversaciones más claras.
-                </p>
-                <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">
-                    Dejamos de hablar de generaciones y empezamos a hablar de <span class="text-fravega">mejores conversaciones</span>.
-                </h2>
-            </div>
+            <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">
+                Dejamos de hablar de generaciones y empezamos a hablar de <span class="text-fravega">mejores conversaciones</span>.
+            </h2>
         </section>
-
     </main>
 
     <footer class="bg-fravega py-16 text-center text-white">
@@ -250,43 +217,42 @@
     </footer>
 
     <script>
-        // Lógica de Tabs e Info
         const content = {
             'gen-z': {
                 title: 'Generación Z',
-                years: 'Nacidos entre 1997 - 2012',
+                years: '1997 - 2012',
                 icon: '📱',
-                color: '#7e22ce',
-                desc: 'Son nativos digitales y crecieron en un mundo hiperconectado. Se sienten cómodos con video llamadas y herramientas colaborativas. Valoran la inmediatez y la transparencia.',
-                valoran: 'Feedback rápido, claro y específico. Saber en el momento qué estuvo bien y qué mejorar.',
-                como: 'Dar feedback cerca de la situación, con ejemplos concretos e involucrarlos en la solución.'
+                color: '#23a5ba',
+                desc: 'Son nativos digitales. Valoran la inmediatez y la transparencia.',
+                valoran: 'Feedback rápido, claro y específico.',
+                como: 'Dar feedback cerca de la situación e involucrarlos.'
             },
             'millennials': {
                 title: 'Millennials',
-                years: 'Nacidos entre 1981 - 1996',
+                years: '1981 - 1996',
                 icon: '🚀',
-                color: '#be185d',
-                desc: 'Crecieron con internet en contextos de cambio. Valoran la autenticidad y buscan propósito y desarrollo profesional continuo.',
-                valoran: 'El feedback frecuente y las oportunidades para aprender y crecer.',
-                como: 'Conversaciones más seguidas, con foco en desarrollo. Explicar qué pueden mejorar y cómo eso los ayuda a crecer.'
+                color: '#4f3089',
+                desc: 'Valoran la autenticidad y buscan propósito y desarrollo continuo.',
+                valoran: 'Feedback frecuente y oportunidades de aprendizaje.',
+                como: 'Conversaciones con foco en desarrollo y crecimiento.'
             },
             'gen-x': {
                 title: 'Generación X',
-                years: 'Nacidos entre 1965 - 1980',
+                years: '1965 - 1980',
                 icon: '🎯',
-                color: '#ea580c',
-                desc: 'Vivieron la transición tecnológica. Son autónomos, prácticos e independientes. Valoran la comunicación concisa y los resultados.',
-                valoran: 'La honestidad y la claridad. Prefieren ir al punto y tener autonomía para resolver.',
-                como: 'Ser directo, concreto y enfocado en resultados. Plantear el tema y dejar espacio para que propongan cómo mejorar.'
+                color: '#83348b',
+                desc: 'Son autónomos y prácticos. Valoran la comunicación concisa.',
+                valoran: 'La honestidad y la claridad. Prefieren ir al punto.',
+                como: 'Ser directo, concreto y enfocado en resultados.'
             },
             'boomers': {
                 title: 'Baby Boomers',
-                years: 'Nacidos entre 1946 - 1964',
+                years: '1946 - 1964',
                 icon: '🤝',
-                color: '#0d9488',
-                desc: 'Cultura del esfuerzo y estabilidad. Valoran la jerarquía, el compromiso y las conexiones personales formales.',
-                valoran: 'Que se reconozca su experiencia y trayectoria. Valoran el respeto y las conversaciones claras.',
-                como: 'Empezar reconociendo lo que aportan. Dar el feedback con respeto y explicar bien el contexto del cambio o mejora.'
+                color: '#da5d7c',
+                desc: 'Cultura del esfuerzo. Valoran la jerarquía y el compromiso.',
+                valoran: 'Que se reconozca su experiencia y trayectoria.',
+                como: 'Empezar reconociendo lo que aportan. Usar respeto.'
             }
         };
 
@@ -309,11 +275,11 @@
                     </div>
                     <div class="md:w-2/3 grid grid-cols-1 gap-4">
                         <div class="bg-slate-50 p-6 rounded-2xl border-l-4" style="border-left-color: ${data.color}">
-                            <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Qué valoran al recibir feedback</h4>
+                            <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Qué valoran</h4>
                             <p class="text-slate-800 font-semibold">${data.valoran}</p>
                         </div>
                         <div class="bg-slate-50 p-6 rounded-2xl border-l-4" style="border-left-color: ${data.color}">
-                            <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Cómo conviene darlo</h4>
+                            <h4 class="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Cómo darlo</h4>
                             <p class="text-slate-800 font-semibold">${data.como}</p>
                         </div>
                     </div>
@@ -326,27 +292,24 @@
             });
         }
 
-        // Lógica del Simulador
         const simulatorData = {
             scenarios: [
                 { 
                     id: 0, 
-                    title: "Mejora de Proceso",
                     responses: {
-                        boomers: { quote: "Reconozco tu trayectoria en esta área. Basado en tu experiencia, ¿crees que este ajuste nos daría más solidez?", tip: "Usa un tono formal y respeta su jerarquía." },
-                        'gen-x': { quote: "Tengo una idea para ser más prácticos y directos en este reporte. ¿Cómo lo ves para optimizar tu tiempo?", tip: "Enfócate en la eficiencia y resultados." },
-                        millennials: { quote: "Esto te ayudará a potenciar tu desarrollo profesional y el impacto de tu trabajo en el equipo.", tip: "Habla del propósito y crecimiento." },
-                        'gen-z': { quote: "Vi que el proceso tardó un poco hoy. Probemos esta herramienta colaborativa para ir más rápido.", tip: "Busca la inmediatez y herramientas digitales." }
+                        boomers: { quote: "Basado en tu trayectoria, ¿crees que este ajuste nos daría más solidez?", tip: "Usa un tono formal." },
+                        'gen-x': { quote: "Tengo una idea para ser más prácticos. ¿Cómo lo ves?", tip: "Enfócate en resultados." },
+                        millennials: { quote: "Esto potenciará tu desarrollo y el impacto de tu trabajo.", tip: "Habla del propósito." },
+                        'gen-z': { quote: "Probemos esta herramienta para ir más rápido.", tip: "Busca la inmediatez." }
                     }
                 },
                 { 
                     id: 1, 
-                    title: "Cumplimiento de Plazos",
                     responses: {
-                        boomers: { quote: "Tu compromiso es vital para el equipo. Revisemos el documento de planificación para volver al cronograma.", tip: "Apela al compromiso y formalidad." },
-                        'gen-x': { quote: "Necesitamos cumplir este hito para no trabar el resto del flujo. Contá conmigo para destrabar lo que necesites.", tip: "Respeta su autonomía pero sé claro con el objetivo." },
-                        millennials: { quote: "¿Sentís que esta tarea se alinea con tus objetivos? Busquemos la forma de priorizar mejor tu agenda.", tip: "Conversa sobre el desarrollo y expectativas." },
-                        'gen-z': { quote: "Che, vi que el archivo se subió tarde. ¿Qué pasó ahí? Busquemos una solución rápida para la próxima.", tip: "Sé transparente, rápido y específico." }
+                        boomers: { quote: "Tu compromiso es vital. Revisemos el cronograma.", tip: "Apela al compromiso." },
+                        'gen-x': { quote: "Necesitamos cumplir este hito. Contá conmigo para destrabarlo.", tip: "Respeta su autonomía." },
+                        millennials: { quote: "¿Sentís que esto se alinea con tus objetivos?", tip: "Conversa sobre expectativas." },
+                        'gen-z': { quote: "Che, el archivo se subió tarde. ¿Buscamos una solución rápida?", tip: "Sé transparente." }
                     }
                 }
             ]
@@ -364,44 +327,46 @@
         function selectGenSim(genId) {
             const res = simulatorData.scenarios[activeScenario].responses[genId];
             const data = content[genId];
-            
-            document.querySelectorAll('.gen-sim-btn').forEach(btn => btn.classList.remove('bg-fravega', 'text-white'));
+            document.querySelectorAll('.gen-sim-btn').forEach(btn => {
+                btn.classList.remove('text-white');
+                btn.style.backgroundColor = 'transparent';
+                btn.style.borderColor = '#e2e8f0';
+            });
             const activeBtn = document.getElementById(`sim-${genId}`);
-            activeBtn.classList.add('bg-fravega', 'text-white');
+            activeBtn.style.backgroundColor = data.color;
             activeBtn.style.borderColor = data.color;
+            activeBtn.classList.add('text-white');
 
             document.getElementById('res-icon').innerText = data.icon;
             document.getElementById('res-title').innerText = `Mensaje para ${data.title}`;
             document.getElementById('res-quote').innerText = `"${res.quote}"`;
             document.getElementById('res-tip').innerText = `TIP: ${res.tip}`;
-            document.getElementById('sim-result').classList.remove('animate-fade-in');
-            void document.getElementById('sim-result').offsetWidth; // Reflow
-            document.getElementById('sim-result').classList.add('animate-fade-in');
         }
 
         function resetSim() {
-            document.querySelectorAll('.gen-sim-btn').forEach(btn => btn.classList.remove('bg-fravega', 'text-white'));
+            document.querySelectorAll('.gen-sim-btn').forEach(btn => {
+                btn.style.backgroundColor = 'transparent';
+                btn.style.borderColor = '#e2e8f0';
+                btn.classList.remove('text-white');
+            });
             document.getElementById('res-icon').innerText = "🎯";
             document.getElementById('res-title').innerText = "Selecciona un perfil";
             document.getElementById('res-quote').innerText = "Aquí verás cómo adaptar el mensaje...";
-            document.getElementById('res-tip').innerText = "CONSEJO CLAVE";
         }
 
         tabs.forEach(btn => btn.addEventListener('click', () => updateTab(btn.dataset.target)));
 
         window.onload = () => {
             updateTab('gen-z');
-
-            // Radar Chart
             new Chart(document.getElementById('radarChart').getContext('2d'), {
                 type: 'radar',
                 data: {
                     labels: ['Fluidez Digital', 'Estructura', 'Propósito', 'Inmediatez', 'Autonomía'],
                     datasets: [
-                        { label: 'Gen Z', data: [95, 20, 85, 95, 50], borderColor: '#7e22ce', backgroundColor: 'rgba(126, 34, 206, 0.1)', borderWidth: 2 },
-                        { label: 'Millennials', data: [85, 40, 95, 80, 70], borderColor: '#be185d', backgroundColor: 'rgba(190, 24, 93, 0.1)', borderWidth: 2 },
-                        { label: 'Gen X', data: [65, 70, 60, 45, 95], borderColor: '#ea580c', backgroundColor: 'rgba(234, 88, 12, 0.1)', borderWidth: 2 },
-                        { label: 'Boomers', data: [40, 95, 50, 30, 80], borderColor: '#0d9488', backgroundColor: 'rgba(13, 148, 136, 0.1)', borderWidth: 2 }
+                        { label: 'Gen Z', data: [95, 20, 85, 95, 50], borderColor: '#23a5ba', backgroundColor: 'rgba(35, 165, 186, 0.1)', borderWidth: 3 },
+                        { label: 'Millennials', data: [85, 40, 95, 80, 70], borderColor: '#4f3089', backgroundColor: 'rgba(79, 48, 137, 0.1)', borderWidth: 3 },
+                        { label: 'Gen X', data: [65, 70, 60, 45, 95], borderColor: '#83348b', backgroundColor: 'rgba(131, 52, 139, 0.1)', borderWidth: 3 },
+                        { label: 'Boomers', data: [40, 95, 50, 30, 80], borderColor: '#da5d7c', backgroundColor: 'rgba(218, 93, 124, 0.1)', borderWidth: 3 }
                     ]
                 },
                 options: {
