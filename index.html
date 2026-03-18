@@ -33,6 +33,11 @@
         .bg-fravega { background-color: #b18af1; }
         .text-fravega { color: #b18af1; }
         .border-fravega { border-color: #b18af1; }
+        
+        /* Estilos para el Simulador */
+        .scenario-card { transition: all 0.2s ease; cursor: pointer; }
+        .scenario-card:hover { transform: translateY(-2px); border-color: #b18af1; }
+        .scenario-card.selected { border-color: #b18af1; background-color: #f5f0ff; }
     </style>
 </head>
 <body class="antialiased">
@@ -174,6 +179,58 @@
             </div>
         </section>
 
+        <!-- NUEVO RECURSO: Simulador de Conversaciones -->
+        <section id="simulador" class="bg-white rounded-[3rem] shadow-sm p-10 md:p-16 border border-slate-100 space-y-10">
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-black text-fravega uppercase tracking-widest">Herramienta Práctica</span>
+                <h2 class="text-3xl font-bold text-slate-800">¿Cómo darías este mensaje?</h2>
+                <p class="text-slate-600">Selecciona una situación y una generación para ver cómo adaptar tu discurso.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Selector de Situación -->
+                <div class="space-y-6">
+                    <h4 class="font-bold text-slate-700">1. Selecciona la Situación:</h4>
+                    <div class="space-y-3">
+                        <div onclick="selectScenario(0)" id="sc-0" class="scenario-card p-4 rounded-2xl border border-slate-200 flex items-center gap-4 selected">
+                            <div class="text-2xl">📈</div>
+                            <div>
+                                <p class="font-bold text-sm">Mejora en un proceso técnico</p>
+                                <p class="text-xs text-slate-500">Sugerir un cambio en la forma de ejecutar una tarea.</p>
+                            </div>
+                        </div>
+                        <div onclick="selectScenario(1)" id="sc-1" class="scenario-card p-4 rounded-2xl border border-slate-200 flex items-center gap-4">
+                            <div class="text-2xl">⏰</div>
+                            <div>
+                                <p class="font-bold text-sm">Cumplimiento de plazos</p>
+                                <p class="text-xs text-slate-500">Conversar sobre la entrega fuera de término de un reporte.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="font-bold text-slate-700 mt-8">2. Selecciona el Perfil del Receptor:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="selectGenSim('boomers')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold hover:border-fravega" id="sim-boomers">Baby Boomers</button>
+                        <button onclick="selectGenSim('gen-x')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold hover:border-fravega" id="sim-gen-x">Gen X</button>
+                        <button onclick="selectGenSim('millennials')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold hover:border-fravega" id="sim-millennials">Millennials</button>
+                        <button onclick="selectGenSim('gen-z')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold hover:border-fravega" id="sim-gen-z">Gen Z</button>
+                    </div>
+                </div>
+
+                <!-- Resultado de la Adaptación -->
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-200 flex flex-col justify-center">
+                    <div id="sim-result" class="animate-fade-in text-center space-y-6">
+                        <div class="text-5xl mb-4" id="res-icon">🎯</div>
+                        <h4 class="text-xl font-bold text-slate-800" id="res-title">Selecciona un perfil</h4>
+                        <div class="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm italic text-slate-600" id="res-quote">
+                            "Aquí verás cómo adaptar el mensaje para que sea efectivo..."
+                        </div>
+                        <div class="text-xs font-bold text-fravega uppercase tracking-widest mt-4" id="res-tip">CONSEJO CLAVE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Conclusión -->
         <section class="text-center space-y-8 pb-20">
             <div class="max-w-3xl mx-auto space-y-6">
@@ -189,10 +246,11 @@
     </main>
 
     <footer class="bg-fravega py-16 text-center text-white">
-        <p class="text-xs font-black uppercase tracking-[0.3em]">Frávega • 2026</p>
+        <p class="text-xs font-black uppercase tracking-[0.3em]">Cultura Frávega • 2026</p>
     </footer>
 
     <script>
+        // Lógica de Tabs e Info
         const content = {
             'gen-z': {
                 title: 'Generación Z',
@@ -209,8 +267,8 @@
                 icon: '🚀',
                 color: '#be185d',
                 desc: 'Crecieron con internet en contextos de cambio. Valoran la autenticidad y buscan propósito y desarrollo profesional continuo.',
-                valoran: 'Feedback frecuente y oportunidades concretas para aprender y crecer.',
-                como: 'Conversaciones más seguidas con foco en desarrollo personal y profesional.'
+                valoran: 'El feedback frecuente y las oportunidades para aprender y crecer.',
+                como: 'Conversaciones más seguidas, con foco en desarrollo. Explicar qué pueden mejorar y cómo eso los ayuda a crecer.'
             },
             'gen-x': {
                 title: 'Generación X',
@@ -219,7 +277,7 @@
                 color: '#ea580c',
                 desc: 'Vivieron la transición tecnológica. Son autónomos, prácticos e independientes. Valoran la comunicación concisa y los resultados.',
                 valoran: 'La honestidad y la claridad. Prefieren ir al punto y tener autonomía para resolver.',
-                como: 'Ser directo, concreto y enfocado en resultados, dejando espacio para su propia gestión.'
+                como: 'Ser directo, concreto y enfocado en resultados. Plantear el tema y dejar espacio para que propongan cómo mejorar.'
             },
             'boomers': {
                 title: 'Baby Boomers',
@@ -228,7 +286,7 @@
                 color: '#0d9488',
                 desc: 'Cultura del esfuerzo y estabilidad. Valoran la jerarquía, el compromiso y las conexiones personales formales.',
                 valoran: 'Que se reconozca su experiencia y trayectoria. Valoran el respeto y las conversaciones claras.',
-                como: 'Empezar reconociendo lo que aportan y explicar bien el contexto del cambio con respeto.'
+                como: 'Empezar reconociendo lo que aportan. Dar el feedback con respeto y explicar bien el contexto del cambio o mejora.'
             }
         };
 
@@ -268,11 +326,73 @@
             });
         }
 
+        // Lógica del Simulador
+        const simulatorData = {
+            scenarios: [
+                { 
+                    id: 0, 
+                    title: "Mejora de Proceso",
+                    responses: {
+                        boomers: { quote: "Reconozco tu trayectoria en esta área. Basado en tu experiencia, ¿crees que este ajuste nos daría más solidez?", tip: "Usa un tono formal y respeta su jerarquía." },
+                        'gen-x': { quote: "Tengo una idea para ser más prácticos y directos en este reporte. ¿Cómo lo ves para optimizar tu tiempo?", tip: "Enfócate en la eficiencia y resultados." },
+                        millennials: { quote: "Esto te ayudará a potenciar tu desarrollo profesional y el impacto de tu trabajo en el equipo.", tip: "Habla del propósito y crecimiento." },
+                        'gen-z': { quote: "Vi que el proceso tardó un poco hoy. Probemos esta herramienta colaborativa para ir más rápido.", tip: "Busca la inmediatez y herramientas digitales." }
+                    }
+                },
+                { 
+                    id: 1, 
+                    title: "Cumplimiento de Plazos",
+                    responses: {
+                        boomers: { quote: "Tu compromiso es vital para el equipo. Revisemos el documento de planificación para volver al cronograma.", tip: "Apela al compromiso y formalidad." },
+                        'gen-x': { quote: "Necesitamos cumplir este hito para no trabar el resto del flujo. Contá conmigo para destrabar lo que necesites.", tip: "Respeta su autonomía pero sé claro con el objetivo." },
+                        millennials: { quote: "¿Sentís que esta tarea se alinea con tus objetivos? Busquemos la forma de priorizar mejor tu agenda.", tip: "Conversa sobre el desarrollo y expectativas." },
+                        'gen-z': { quote: "Che, vi que el archivo se subió tarde. ¿Qué pasó ahí? Busquemos una solución rápida para la próxima.", tip: "Sé transparente, rápido y específico." }
+                    }
+                }
+            ]
+        };
+
+        let activeScenario = 0;
+
+        function selectScenario(id) {
+            activeScenario = id;
+            document.querySelectorAll('.scenario-card').forEach(el => el.classList.remove('selected'));
+            document.getElementById(`sc-${id}`).classList.add('selected');
+            resetSim();
+        }
+
+        function selectGenSim(genId) {
+            const res = simulatorData.scenarios[activeScenario].responses[genId];
+            const data = content[genId];
+            
+            document.querySelectorAll('.gen-sim-btn').forEach(btn => btn.classList.remove('bg-fravega', 'text-white'));
+            const activeBtn = document.getElementById(`sim-${genId}`);
+            activeBtn.classList.add('bg-fravega', 'text-white');
+            activeBtn.style.borderColor = data.color;
+
+            document.getElementById('res-icon').innerText = data.icon;
+            document.getElementById('res-title').innerText = `Mensaje para ${data.title}`;
+            document.getElementById('res-quote').innerText = `"${res.quote}"`;
+            document.getElementById('res-tip').innerText = `TIP: ${res.tip}`;
+            document.getElementById('sim-result').classList.remove('animate-fade-in');
+            void document.getElementById('sim-result').offsetWidth; // Reflow
+            document.getElementById('sim-result').classList.add('animate-fade-in');
+        }
+
+        function resetSim() {
+            document.querySelectorAll('.gen-sim-btn').forEach(btn => btn.classList.remove('bg-fravega', 'text-white'));
+            document.getElementById('res-icon').innerText = "🎯";
+            document.getElementById('res-title').innerText = "Selecciona un perfil";
+            document.getElementById('res-quote').innerText = "Aquí verás cómo adaptar el mensaje...";
+            document.getElementById('res-tip').innerText = "CONSEJO CLAVE";
+        }
+
         tabs.forEach(btn => btn.addEventListener('click', () => updateTab(btn.dataset.target)));
 
         window.onload = () => {
             updateTab('gen-z');
 
+            // Radar Chart
             new Chart(document.getElementById('radarChart').getContext('2d'), {
                 type: 'radar',
                 data: {
