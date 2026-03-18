@@ -31,15 +31,15 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* Paleta de marca */
+        /* Nueva Paleta de Marca */
         .bg-fravega { background-color: #4f3089; }
         .text-fravega { color: #23a5ba; }
         .border-fravega { border-color: #23a5ba; }
         
         /* Estilos para el Simulador */
         .scenario-card { transition: all 0.2s ease; cursor: pointer; }
-        .scenario-card:hover { border-color: #23a5ba; }
-        .scenario-card.selected { border-color: #4f3089; background-color: #f5f3ff; }
+        .scenario-card:hover { transform: translateY(-2px); border-color: #23a5ba; }
+        .scenario-card.selected { border-color: #4f3089; background-color: #f5f0ff; }
     </style>
 </head>
 <body class="antialiased">
@@ -65,11 +65,11 @@
     <main class="max-w-6xl mx-auto px-4 py-16 space-y-24">
 
         <section class="max-w-4xl mx-auto bg-white p-10 md:p-16 rounded-[3rem] shadow-sm border border-slate-100">
-            <div class="max-w-none text-lg md:text-xl text-slate-600 leading-relaxed space-y-8">
+            <div class="prose prose-slate max-w-none text-lg md:text-xl text-slate-600 leading-relaxed space-y-8">
                 <p>
                     En Frávega convivimos personas con distintas experiencias, recorridos y formas de trabajar. Cuando el feedback se adapta a cada persona, las conversaciones se vuelven más claras, más valiosas y se transforman en una oportunidad de aprendizaje para todo el equipo.
                 </p>
-                <p class="font-extrabold text-slate-800 text-2xl border-l-4 border-fravega pl-6">Esa diversidad es una gran fortaleza.</p>
+                <p class="font-bold text-slate-800 text-2xl border-l-4 border-fravega pl-6">Esa diversidad es una gran fortaleza.</p>
                 <p>
                     Conozcamos un poco más las distintas generaciones y sus características principales:
                 </p>
@@ -98,6 +98,9 @@
             <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
                 <p>
                     En los equipos compartimos el trabajo personas de distintas generaciones y cada uno tiene expectativas diferentes sobre cómo interactuar, comunicarse y recibir feedback.
+                </p>
+                <p>
+                    <strong>La clave está en cómo nos adaptamos para dar y recibir feedback:</strong> conocer que valora cada generación nos acerca a tener conversaciones más efectivas.
                 </p>
             </div>
 
@@ -130,21 +133,21 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
                     <h3 class="text-2xl font-black mb-4" style="color: #4f3089;">Experiencia</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">Reconocimiento del conocimiento del negocio y el contexto.</p>
+                    <p class="text-slate-600 leading-relaxed text-lg">Quienes tienen mayor antigüedad valoran que se reconozca su conocimiento del negocio.</p>
                 </div>
                 <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
                     <h3 class="text-2xl font-black mb-4" style="color: #23a5ba;">Nuevas Miradas</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">Claridad sobre expectativas y acompañamiento inicial.</p>
+                    <p class="text-slate-600 leading-relaxed text-lg">Quienes recién se incorporan necesitan mayor claridad sobre expectativas.</p>
                 </div>
             </div>
 
             <div class="bg-slate-900 text-white p-12 rounded-[3rem] relative overflow-hidden">
                 <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
                     <div class="md:w-2/3 space-y-6">
-                        <h4 class="text-2xl font-bold italic" style="color: #da5d7c;">Caso: Dos personas de 35 años</h4>
+                        <h4 class="text-2xl font-bold italic" style="color: #23a5ba;">Caso: Dos personas de 35 años</h4>
                         <ul class="space-y-4 text-slate-400">
-                            <li class="flex gap-3"><span style="color: #23a5ba;">✔</span> La primera valora un feedback directo y experto.</li>
-                            <li class="flex gap-3"><span style="color: #23a5ba;">✔</span> La segunda necesita más orientación y contexto.</li>
+                            <li class="flex gap-3"><span class="text-fravega">✔</span> La primera valora un feedback directo y experto.</li>
+                            <li class="flex gap-3"><span class="text-fravega">✔</span> La segunda necesita más contexto y orientación.</li>
                         </ul>
                     </div>
                     <div class="md:w-1/3 flex justify-center text-8xl">💡</div>
@@ -159,21 +162,21 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-6">
-                    <h4 class="font-bold text-slate-700 uppercase text-xs tracking-widest">1. Situación:</h4>
+                    <h4 class="font-bold text-slate-700">1. Selecciona la Situación:</h4>
                     <div class="space-y-3">
                         <div onclick="selectScenario(0)" id="sc-0" class="scenario-card p-4 rounded-2xl border border-slate-200 flex items-center gap-4 selected">
                             <div class="text-2xl">📈</div>
-                            <p class="font-bold text-sm">Mejora técnica</p>
+                            <p class="font-bold text-sm">Mejora de Proceso</p>
                         </div>
                         <div onclick="selectScenario(1)" id="sc-1" class="scenario-card p-4 rounded-2xl border border-slate-200 flex items-center gap-4">
                             <div class="text-2xl">⏰</div>
-                            <p class="font-bold text-sm">Cumplimiento de plazos</p>
+                            <p class="font-bold text-sm">Cumplimiento de Plazos</p>
                         </div>
                     </div>
 
-                    <h4 class="font-bold text-slate-700 uppercase text-xs tracking-widest mt-8">2. Perfil:</h4>
+                    <h4 class="font-bold text-slate-700 mt-8">2. Selecciona el Perfil:</h4>
                     <div class="flex flex-wrap gap-2">
-                        <button onclick="selectGenSim('boomers')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold" id="sim-boomers">Boomers</button>
+                        <button onclick="selectGenSim('boomers')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold" id="sim-boomers">Baby Boomers</button>
                         <button onclick="selectGenSim('gen-x')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold" id="sim-gen-x">Gen X</button>
                         <button onclick="selectGenSim('millennials')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold" id="sim-millennials">Millennials</button>
                         <button onclick="selectGenSim('gen-z')" class="gen-sim-btn px-4 py-2 rounded-full border border-slate-200 text-xs font-bold" id="sim-gen-z">Gen Z</button>
@@ -185,9 +188,9 @@
                         <div class="text-5xl mb-4" id="res-icon">🎯</div>
                         <h4 class="text-xl font-bold text-slate-800" id="res-title">Selecciona un perfil</h4>
                         <div class="p-6 bg-white rounded-2xl shadow-sm italic text-slate-600" id="res-quote">
-                            "Selecciona una opción para ver la adaptación..."
+                            "Aquí verás cómo adaptar el mensaje..."
                         </div>
-                        <div class="text-xs font-bold text-fravega uppercase tracking-widest" id="res-tip">TIP</div>
+                        <div class="text-xs font-bold text-fravega uppercase tracking-widest mt-4" id="res-tip">CONSEJO CLAVE</div>
                     </div>
                 </div>
             </div>
@@ -195,7 +198,7 @@
 
         <section class="text-center pb-20">
             <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">
-                Hablamos de <span class="text-fravega">mejores conversaciones</span>.
+                Dejamos de hablar de generaciones y empezamos a hablar de <span class="text-fravega">mejores conversaciones</span>.
             </h2>
         </section>
     </main>
@@ -206,10 +209,10 @@
 
     <script>
         const content = {
-            'gen-z': { title: 'Gen Z', years: '1997 - 2012', icon: '📱', color: '#23a5ba', desc: 'Nativos digitales. Valoran inmediatez.', valoran: 'Feedback rápido y específico.', como: 'Dar feedback al momento.' },
-            'millennials': { title: 'Millennials', years: '1981 - 1996', icon: '🚀', color: '#4f3089', desc: 'Buscan propósito y desarrollo.', valoran: 'Oportunidades de aprendizaje.', como: 'Foco en crecimiento futuro.' },
-            'gen-x': { title: 'Gen X', years: '1965 - 1980', icon: '🎯', color: '#83348b', desc: 'Autónomos y prácticos.', valoran: 'Honestidad y claridad.', como: 'Ir al punto con resultados.' },
-            'boomers': { title: 'Boomers', years: '1946 - 1964', icon: '🤝', color: '#da5d7c', desc: 'Cultura del esfuerzo y respeto.', valoran: 'Reconocimiento de experiencia.', como: 'Tono respetuoso y formal.' }
+            'gen-z': { title: 'Generación Z', years: '1997 - 2012', icon: '📱', color: '#23a5ba', desc: 'Nativos digitales. Valoran inmediatez y transparencia.', valoran: 'Feedback rápido y específico.', como: 'Dar feedback al momento.' },
+            'millennials': { title: 'Millennials', years: '1981 - 1996', icon: '🚀', color: '#4f3089', desc: 'Buscan propósito y desarrollo profesional.', valoran: 'Feedback frecuente y oportunidades.', como: 'Foco en desarrollo y propósito.' },
+            'gen-x': { title: 'Generación X', years: '1965 - 1980', icon: '🎯', color: '#83348b', desc: 'Autónomos y prácticos. Valoran la independencia.', valoran: 'Honestidad y claridad directa.', como: 'Ser directo y enfocado en resultados.' },
+            'boomers': { title: 'Baby Boomers', years: '1946 - 1964', icon: '🤝', color: '#da5d7c', desc: 'Cultura del esfuerzo y respeto jerárquico.', valoran: 'Reconocimiento de trayectoria.', como: 'Respetar la experiencia y dar contexto.' }
         };
 
         const container = document.getElementById('tab-content');
@@ -222,7 +225,7 @@
                     <div class="md:w-1/3 space-y-6">
                         <div class="flex items-center gap-4">
                             <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-sm" style="background-color: ${data.color}15; color: ${data.color}">${data.icon}</div>
-                            <div><h3 class="text-2xl font-black text-slate-800">${data.title}</h3><p class="text-xs font-bold text-slate-400 tracking-widest">${data.years}</p></div>
+                            <div><h3 class="text-2xl font-black text-slate-800 leading-none">${data.title}</h3><p class="text-xs font-bold text-slate-400 mt-2 tracking-widest">${data.years}</p></div>
                         </div>
                         <p class="text-slate-600 text-sm leading-relaxed">${data.desc}</p>
                     </div>
@@ -247,8 +250,8 @@
 
         const simulatorData = {
             scenarios: [
-                { id: 0, responses: { boomers: { quote: "¿Crees que este ajuste nos daría más solidez?", tip: "Usa un tono formal." }, 'gen-x': { quote: "Hagámoslo más práctico. ¿Cómo lo ves?", tip: "Resultados directos." }, millennials: { quote: "Esto potenciará tu desarrollo.", tip: "Habla del propósito." }, 'gen-z': { quote: "Probemos esto para ir más rápido.", tip: "Busca agilidad." } } },
-                { id: 1, responses: { boomers: { quote: "Tu compromiso es vital. Revisemos los tiempos.", tip: "Apela al compromiso." }, 'gen-x': { quote: "Necesitamos cumplir este hito. ¿Qué falta?", tip: "Foco en resolución." }, millennials: { quote: "¿Esto se alinea con tus metas?", tip: "Conversa sobre el 'por qué'." }, 'gen-z': { quote: "El archivo se subió tarde. ¿Lo vemos?", tip: "Transparencia total." } } }
+                { id: 0, responses: { boomers: { quote: "¿Crees que este ajuste nos daría más solidez?", tip: "Usa un tono formal." }, 'gen-x': { quote: "Hagámoslo más práctico. ¿Cómo lo ves?", tip: "Resultados directos." }, millennials: { quote: "Esto potenciará tu desarrollo.", tip: "Habla del propósito." }, 'gen-z': { quote: "Probemos esto para ir más rápido.", tip: "Usa herramientas digitales." } } },
+                { id: 1, responses: { boomers: { quote: "Tu compromiso es vital para el equipo.", tip: "Apela a la estabilidad." }, 'gen-x': { quote: "Necesitamos cumplir este hito hoy.", tip: "Enfócate en la eficiencia." }, millennials: { quote: "¿Esto se alinea con tus metas?", tip: "Conversa sobre prioridades." }, 'gen-z': { quote: "Che, el archivo se subió tarde. ¿Lo vemos?", tip: "Sé rápido y transparente." } } }
             ]
         };
 
@@ -265,9 +268,9 @@
             const res = simulatorData.scenarios[activeScenario].responses[genId];
             const data = content[genId];
             document.querySelectorAll('.gen-sim-btn').forEach(btn => {
+                btn.classList.remove('text-white');
                 btn.style.backgroundColor = 'transparent';
                 btn.style.borderColor = '#e2e8f0';
-                btn.classList.remove('text-white');
             });
             const activeBtn = document.getElementById(`sim-${genId}`);
             activeBtn.style.backgroundColor = data.color;
@@ -281,9 +284,9 @@
 
         function resetSim() {
             document.querySelectorAll('.gen-sim-btn').forEach(btn => {
+                btn.classList.remove('text-white');
                 btn.style.backgroundColor = 'transparent';
                 btn.style.borderColor = '#e2e8f0';
-                btn.classList.remove('text-white');
             });
             document.getElementById('res-icon').innerText = "🎯";
             document.getElementById('res-title').innerText = "Selecciona un perfil";
